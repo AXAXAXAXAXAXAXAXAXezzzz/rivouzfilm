@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: bottg
+    runtime: python
+    rootDir: force-subscribe-telegram-bot
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: DATABASE_PATH
+        value: bot_data.db
